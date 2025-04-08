@@ -1,7 +1,7 @@
 const Hero = () => {
     return(
         <>
-        <div className="w-full h-[60%] bg-white/10 backdrop-blur-lg shadow-lg border border-white/20 rounded-md flex justify-center items-center text-white">
+        <div className="w-[70%] h-[40%] bg-white/10 backdrop-blur-lg shadow-lg border border-white/20 rounded-md flex justify-center items-center text-white">
           <div className="block text-center p-4">
             <h1 className="relative text-5xl text-white">
               Welcome to Farkle game!
