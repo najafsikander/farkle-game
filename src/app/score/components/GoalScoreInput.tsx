@@ -8,9 +8,12 @@ type Props = {
   setGoal?: (goal: number) => void;
   setTurn?: (turn: number) => void;
 };
+// Reusable Component to set the goal and score of the game.
 const GoalScoreInput: React.FC<Props> = ({ purpose, min, max,setGoal, setTurn }) => {
+  
   const targetRef = useRef<HTMLInputElement>(null);
 
+  // Submit function to set the goal and score of the game.
   const submitForm = (e: React.FormEvent) => {
     e.preventDefault();
     const targetValue = targetRef.current?.value;
