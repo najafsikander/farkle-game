@@ -6,7 +6,7 @@ type userTurn = {
   player: string;
   score: number;
 };
-
+// TODO: Extract Player Stats Area to a separate component and file.
 // Main score area component to manage the game score and turns.
 const ScoreArea = () => {
   let score: number = 0;
@@ -108,6 +108,8 @@ const ScoreArea = () => {
           {/* Using component to add score for players in their respective turn */}
           <GoalScoreInput purpose="setScore" setGoal={setScore} />
           <hr className="border-white w-full mt-3" />
+          
+          {/* Displaying players stats */}
           {goal > 0 && (
             <section className="w-full flex flex-row justify-center gap-5 mt-3">
               {["Player 1", "Player 2"].map((player: string) => (
