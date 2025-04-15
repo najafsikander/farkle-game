@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import GoalScoreInput from "./GoalScoreInput";
+import PlayersStats from "./PlayersStats";
 
 type userTurn = {
   player: string;
   score: number;
 };
-// TODO: Extract Player Stats Area to a separate component and file.
 // Main score area component to manage the game score and turns.
 const ScoreArea = () => {
   let score: number = 0;
@@ -110,28 +110,7 @@ const ScoreArea = () => {
           <hr className="border-white w-full mt-3" />
           
           {/* Displaying players stats */}
-          {goal > 0 && (
-            <section className="w-full flex flex-row justify-center gap-5 mt-3">
-              {["Player 1", "Player 2"].map((player: string) => (
-                <div className="text-center w-[30%]" key={player}>
-                  <h1 className="text-3xl font-bold">{player} Score</h1>
-
-                  <div className="mt-3 flex flex-row justify-center">
-                    <ul className="w-[30%] pb-1 mb-3 border-b-2 border-white">
-                      {playersStats
-                        .filter((p) => p.player === player)
-                        .map((p: userTurn) => (
-                          <li className="text-xl mb-2" key={p.score}>
-                            +{p.score}
-                          </li>
-                        ))}
-                    </ul>
-                  </div>
-                  <div>{getTotalPlayerStore(+player.split(" ")[1])}</div>
-                </div>
-              ))}
-            </section>
-          )}
+          <PlayersStats goal={goal} playersStats={playersStats} getTotalPlayerStore={getTotalPlayerStore}/>
         </section>
       </div>
     </>
