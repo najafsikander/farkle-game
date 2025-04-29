@@ -1,3 +1,4 @@
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 const Navbar: React.FC = () => {
@@ -6,7 +7,14 @@ const Navbar: React.FC = () => {
       <div className="navbar bg-base-300">
         <div className="flex flex-row justify-between w-full">
         <Link className="btn btn-ghost text-xl" href="/">Farkle Game</Link>
+        <div className="flex flex-row gap-1">
+        <div className="flex flex-col justify-center">
+        <SignedIn>
+          <UserButton/>
+        </SignedIn>
+        </div>
         <Link className="btn btn-ghost text-lg" href="/score">Score</Link>
+        </div>
         </div>
       </div>
     </>
