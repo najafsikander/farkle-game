@@ -1,5 +1,7 @@
+'use client';
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
+import { UserIcon } from "@heroicons/react/24/outline";
 
 const Navbar: React.FC = () => {
   return (
@@ -10,7 +12,14 @@ const Navbar: React.FC = () => {
         <div className="flex flex-row gap-1">
         <div className="flex flex-col justify-center">
         <SignedIn>
-          <UserButton/>
+          <UserButton>
+            <UserButton.MenuItems>
+            <UserButton.Link
+            label="Profile"
+            labelIcon={<UserIcon className="w-5 h-5" />}
+            href="/profile"/>
+            </UserButton.MenuItems>
+          </UserButton>
         </SignedIn>
         </div>
         <Link className="btn btn-ghost text-lg" href="/score">Score</Link>
