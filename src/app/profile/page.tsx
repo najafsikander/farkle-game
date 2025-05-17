@@ -1,4 +1,6 @@
 import { checkUser } from "@/lib/checkUser";
+
+//TODO: Complete Profile Page. Profile pic, details, friends list, game tracker history.
 const ProfilePage = async () => {
     const user = await checkUser();
 

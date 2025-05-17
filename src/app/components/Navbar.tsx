@@ -3,6 +3,7 @@ import { SignedIn, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { UserIcon } from "@heroicons/react/24/outline";
 
+//TODO: Add User Search Option
 const Navbar: React.FC = () => {
   return (
     <>
