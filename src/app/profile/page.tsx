@@ -1,6 +1,7 @@
 import { checkUser } from "@/lib/checkUser";
 
 //TODO: Complete Profile Page. Profile pic, Avatar background, details, friends list, game tracker history.
+//TODO: Update delete user webhook
 const ProfilePage = async () => {
   const user = await checkUser();
 
