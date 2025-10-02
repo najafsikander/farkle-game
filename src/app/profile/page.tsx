@@ -3,6 +3,7 @@ import type { User } from "@clerk/nextjs/server";
 import SideProfile from "./components/SideProfile";
 //TODO: Complete Profile Page. Profile pic, Avatar background, details, friends list, game tracker history.
 //TODO: Update delete user webhook
+//TODO: Add Right Side Profile Section
 const ProfilePage = async () => {
   const user: User | null = await checkUser();
 
