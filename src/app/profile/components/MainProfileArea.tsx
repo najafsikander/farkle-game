@@ -1,19 +1,33 @@
 import type { User } from "@clerk/nextjs/server";
 import { FC } from "react";
+import UserCommnet from "./UserComment";
+import PostStatus from "./PostStatus";
 
 type Props = {
-    user: User;
-}
-const MainProfileArea:FC<Props> = ({ user }) => {
-    return (
-        <>
-        <section className="w-full bg-white rounded-lg p-3">
-            <h2 className="text-xl text-slate-800 mb-2">Hi {user.firstName}, share your thoughts!</h2>
-            <input type="text" placeholder="What's on your mind?" className="w-full p-2 border rounded text-slate-800"/>
-            <button type="button" className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer">Post</button>
-        </section>
-        </>
-    );
-}
+  user: User;
+};
+const MainProfileArea: FC<Props> = ({ user }) => {
+  
+
+  return (
+    <>
+      <main className="flex flex-col items-center w-full h-full gap-4">
+        {/* Update Status Section */}
+        <PostStatus user={user}/>
+
+        {/* User Comments Section */}
+        <div className="overflow-y-auto w-full h-full p-2">
+            {
+            Array.from({length:3}).map((_,index) => (
+                <UserCommnet user={user} key={index} />
+            ))
+        }
+        </div>
+
+        
+      </main>
+    </>
+  );
+};
 
 export default MainProfileArea;
