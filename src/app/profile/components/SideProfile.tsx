@@ -1,6 +1,7 @@
 import type { User } from "@clerk/nextjs/server";
 import { FC } from "react";
 import Image from "next/image";
+import UserInfoCard from "./UserInfoCard";
 
 type Props = {
   user: User;
@@ -18,13 +19,7 @@ const SideProfile: FC<Props> = ({ user }) => {
         <div className="flex justify-center w-full absolute top-[29%]">
         <Image src={user.imageUrl} alt={user.firstName || "User Avatar"} width={100} height={100} className="rounded-[50%]"/>
         </div>
-        <main className="w-full flex flex-col gap-2 mt-[9vh] p-3 bg-white rounded-2xl text-slate-600">
-            <h1 className="text-center text-2xl font-bold">{user.firstName} {user.lastName}</h1>
-            <h2 className="text-center text-lg">@{user.username}</h2>
-            <h3 className="text-center text-md">{user.emailAddresses[0]?.emailAddress}</h3>
-            <h3 className="text-center text-md">Created: {new Date(user.createdAt).toLocaleDateString()}</h3>
-            <h3 className="text-center text-md">Last Sign In: {new Date(user.lastSignInAt || "").toLocaleDateString()}</h3>
-        </main>
+        <UserInfoCard stringifiedUser={JSON.stringify(user)}/>
 
 
         <main className="w-full gap-2 mt-10 p-3 bg-white rounded-2xl text-slate-600">
