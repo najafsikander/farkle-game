@@ -2,6 +2,7 @@ import type { User } from "@clerk/nextjs/server";
 import { FC } from "react";
 import UserCommnet from "./UserComment";
 import PostStatus from "./PostStatus";
+import MatchStats from "./MatchStats";
 
 type Props = {
   user: User;
@@ -13,6 +14,7 @@ const MainProfileArea: FC<Props> = ({ user }) => {
     <>
       <main className="flex flex-col items-center w-full h-full gap-4">
         {/* Update Status Section */}
+        <MatchStats user={user}/>
         <PostStatus user={user}/>
 
         {/* User Comments Section */}

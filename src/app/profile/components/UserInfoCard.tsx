@@ -13,7 +13,7 @@ const UserInfoCard:FC<Props> = ({stringifiedUser}) => {
     const isCurrentUser:boolean |null = (userId != null && (userId !== user.id));
     return(
         <>
-        <main className="w-full flex flex-col gap-2 mt-[9vh] p-3 bg-white rounded-2xl text-slate-600">
+        <main className="w-full flex flex-col gap-2 mt-[11vh] p-3 bg-white rounded-2xl text-slate-600">
             <div className="flex justify-center">
                 <h1 className="text-center text-2xl font-bold">{user.firstName} {user.lastName}</h1>
                 {isCurrentUser && <button className="ml-2 bg-slate-800 text-white rounded-[50%] p-2 cursor-pointer"><UserPlusIcon className="w-5 h-5 text-white" /></button>}
